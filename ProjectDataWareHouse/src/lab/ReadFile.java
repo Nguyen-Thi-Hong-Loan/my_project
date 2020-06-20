@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadFile {
 	List<List<Object>> informations;
@@ -74,10 +73,10 @@ public class ReadFile {
 					}
 				}
 				informations.add(details);
-				for (Object st : details) {
-					System.out.print(st + "\t");
-					System.out.println();
-				}
+//				for (Object st : details) {
+//					System.out.print(st + "\t");
+//					System.out.println();
+//				}
 
 			}
 			wr.close();
@@ -105,8 +104,7 @@ public class ReadFile {
 	}
 
 	public static void main(String[] args) {
-		new ReadFile().readData(
-				"E:\\Tai_Lieu\\HK2-----3\\DatawareHouse\\DataFeedSpecification_17130110\\DataFeedSpecification_17130110.xlsx");
+		new ReadFile().readData("text\\DataFeedSpecification_17130110.xlsx");
 
 	}
 }
