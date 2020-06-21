@@ -10,7 +10,7 @@ public class Queries {
 		List<Object> title = new ReadFile().readData("text\\DataFeedSpecification_17130110.xlsx").get(0);
 		List<String> data = getData(new ReadFile().readData("text\\DataFeedSpecification_17130110.xlsx").get(1));
 
-		DBConnection connect = new DBConnection();
+		MyDBConnection connect = new MyDBConnection();
 		String query = "create table information.INFORMATION (";
 		query += title.get(0).toString() + " " + data.get(0) + " unique auto_increment primary key, ";
 		for (int i = 1; i < title.size() - 1; i++) {
